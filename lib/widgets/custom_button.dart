@@ -9,28 +9,30 @@ class UseCaseCalculateButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.pushNamed(context, '/use_case');
+        Navigator.pushNamed(context, '/use_case_points');
       },
       style: ElevatedButton.styleFrom(
-        primary: Colors.white,
-        onPrimary: Colors.black,
-        padding: EdgeInsets.all(16),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        elevation: 0,
-        // Set background image
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("lib/widgets/assets/images/UseCaseCalculate.png"),
-            fit: BoxFit.cover,
-          ),
+          borderRadius: BorderRadius.circular(25),
         ),
       ),
-      child: Text('Use Case Calculate'),
+
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:[
+          Image.asset(
+              'assets/images/UseCaseCalculate.jpeg',
+            width: 300,
+            height: 200,
+            fit: BoxFit.cover,
+          ),
+
+        ],
+      ),
     );
   }
 }
+
 
 class ImportButton extends StatelessWidget {
   final Function onPressed;
@@ -42,22 +44,51 @@ class ImportButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed as void Function()?,
       style: ElevatedButton.styleFrom(
-        primary: Colors.white,
-        onPrimary: Colors.black,
-        padding: EdgeInsets.all(16),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        elevation: 0,
-        // Set background image
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("lib/widgets/assets/images/Import.png"),
-            fit: BoxFit.cover,
-          ),
+          borderRadius: BorderRadius.circular(25),
         ),
       ),
-      child: Text('Import'),
+      child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+        children:[
+          Image.asset(
+            'assets/images/Import.jpeg',
+            width: 300,
+            height: 200,
+            fit: BoxFit.cover,
+          ),
+
+        ],
+      ),
+    );
+  }
+
+
+}
+
+class StartButton extends StatelessWidget{
+  const StartButton({Key? key}) : super(key:key);
+
+  @override
+  Widget build(BuildContext context){
+    return ElevatedButton(
+      onPressed:(){
+        Navigator.pushNamed(context, '/home');
+      },
+      style: ElevatedButton.styleFrom(
+        backgroundColor: const Color(0xFF50C2C9),
+        padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 25),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+      ),
+      child: const Text(
+        'Start',
+        style: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
     );
   }
 }
