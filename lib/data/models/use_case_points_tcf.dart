@@ -1,18 +1,17 @@
-
-class UseCasePointsTCF{
-  int t1;//DistributedSystem
-  int t2;//ResponseTime/PerformanceObjectives
-  int t3;//End-UserEfficiency
-  int t4;//InternalProcessingComplexity
-  int t5;//CodeReusability
-  int t6;//EasyToInstall
-  int t7;//EasyToUser
-  int t8;//PortabilityToOtherPlatforms
-  int t9;//SystemMaintenance
-  int t10;//Concurrent/parallelProcessing
-  int t11;//SecurityFeatures
-  int t12;//AccessForThirdParties
-  int t13;//EndUserTraining
+class UseCasePointsTCF {
+  int t1; //DistributedSystem
+  int t2; //ResponseTime/PerformanceObjectives
+  int t3; //End-UserEfficiency
+  int t4; //InternalProcessingComplexity
+  int t5; //CodeReusability
+  int t6; //EasyToInstall
+  int t7; //EasyToUser
+  int t8; //PortabilityToOtherPlatforms
+  int t9; //SystemMaintenance
+  int t10; //Concurrent/parallelProcessing
+  int t11; //SecurityFeatures
+  int t12; //AccessForThirdParties
+  int t13; //EndUserTraining
   double tcf;
 
   UseCasePointsTCF({
@@ -30,5 +29,5 @@ class UseCasePointsTCF{
     required this.t12,
     required this.t13,
     required this.tcf,
-});
+  });
 }

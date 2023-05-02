@@ -1,4 +1,4 @@
-class UseCaseToolUser{
+class UseCaseToolUser {
   String uid;
   String fullName;
   String email;
@@ -11,5 +11,5 @@ class UseCaseToolUser{
     required this.email,
     required this.displayName,
     required this.photoUrl,
-});
+  });
 }

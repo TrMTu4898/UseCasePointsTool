@@ -1,4 +1,3 @@
-
 class UseCasePointsUAW {
   int simple;
   int average;

@@ -2,7 +2,8 @@ import '../../../../data/models/use_case_points_uucp.dart';
 import '../../../../data/models/use_case_points_tcf.dart';
 import '../../../../data/models/use_case_points_uaw.dart';
 import '../../../../data/models/use_case_points_ecf.dart';
-class UseCasePoint{
+
+class UseCasePoint {
   String nameProject;
   DateTime createdProject;
   DateTime updatedProject;
@@ -25,6 +26,5 @@ class UseCasePoint{
     required this.ucp,
     required this.uid,
     required this.pid,
-});
-
+  });
 }

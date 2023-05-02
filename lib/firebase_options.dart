@@ -66,7 +66,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '242177661490',
     projectId: 'usecasepointtool',
     storageBucket: 'usecasepointtool.appspot.com',
-    iosClientId: '242177661490-nhpc1q2bssm7asvh2u6uggplb5fdbpvq.apps.googleusercontent.com',
+    iosClientId:
+        '242177661490-nhpc1q2bssm7asvh2u6uggplb5fdbpvq.apps.googleusercontent.com',
     iosBundleId: 'com.example.usecasetool',
   );
 
@@ -76,7 +77,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '242177661490',
     projectId: 'usecasepointtool',
     storageBucket: 'usecasepointtool.appspot.com',
-    iosClientId: '242177661490-nhpc1q2bssm7asvh2u6uggplb5fdbpvq.apps.googleusercontent.com',
+    iosClientId:
+        '242177661490-nhpc1q2bssm7asvh2u6uggplb5fdbpvq.apps.googleusercontent.com',
     iosBundleId: 'com.example.usecasetool',
   );
 }

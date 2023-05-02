@@ -6,7 +6,8 @@ import '../../data/repositories/user_repository.dart';
 import 'authentication_event.dart';
 import 'authentication_state.dart';
 
-class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
+class AuthenticationBloc
+    extends Bloc<AuthenticationEvent, AuthenticationState> {
   final UserRepository _userRepository;
 
   AuthenticationBloc({required UserRepository userRepository})
@@ -14,7 +15,8 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
         super(AuthenticationInitial());
 
   @override
-  Stream<AuthenticationState> mapEventToState(AuthenticationEvent event) async* {
+  Stream<AuthenticationState> mapEventToState(
+      AuthenticationEvent event) async* {
     if (event is AuthenticationStarted) {
       yield* _mapAuthenticationStartedToState();
     } else if (event is AuthenticationLoggedIn) {

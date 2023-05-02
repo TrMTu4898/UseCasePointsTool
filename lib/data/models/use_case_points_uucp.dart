@@ -1,4 +1,3 @@
-
 class UseCasePointsUUCP {
   int simple;
   int average;

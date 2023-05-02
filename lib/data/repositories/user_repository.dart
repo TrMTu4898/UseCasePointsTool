@@ -20,12 +20,12 @@ class UserRepository {
       _userController.add(firebaseUser == null
           ? null
           : UseCaseToolUser(
-        uid: firebaseUser.uid,
-        fullName: firebaseUser.displayName ?? '',
-        email: firebaseUser.email ?? '',
-        displayName: firebaseUser.displayName ?? '',
-        photoUrl: firebaseUser.photoURL ?? '',
-      ));
+              uid: firebaseUser.uid,
+              fullName: firebaseUser.displayName ?? '',
+              email: firebaseUser.email ?? '',
+              displayName: firebaseUser.displayName ?? '',
+              photoUrl: firebaseUser.photoURL ?? '',
+            ));
     });
   }
 
@@ -37,7 +37,7 @@ class UserRepository {
   }) async {
     try {
       final UserCredential userCredential =
-      await _firebaseAuth.createUserWithEmailAndPassword(
+          await _firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -54,7 +54,7 @@ class UserRepository {
   }) async {
     try {
       final UserCredential userCredential =
-      await _firebaseAuth.signInWithEmailAndPassword(
+          await _firebaseAuth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );

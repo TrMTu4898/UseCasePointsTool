@@ -19,58 +19,59 @@ class UseCasePointsRepository {
     required UseCasePointsTCF tcf,
     required UseCasePointsUAW uaw,
     required UseCasePointsECF ecf,
-      }) async {
-    try{
+  }) async {
+    try {
       await _useCasePointsCollection.doc(pid).set({
         'uid': uid,
         'Name Project': ucp.nameProject,
-        'Created Date ' : DateTime.now(),
+        'Created Date ': DateTime.now(),
         'Updated Date ': DateTime.now(),
-        'UCP' : ucp.ucp,
-      'UUCP':{
-        'Simple' :uucp.simple,
-        'Average' :uucp.average,
-        'Complex' : uucp.complex,
-        'UUCP' : uucp.uucp,
-      },
-      'UAW':{
-        'Simple' :uaw.simple,
-        'Average' :uaw.average,
-        'Complex' : uaw.complex,
-        'UAW' : uaw.uaw,
-      },
-      'TCF':{
-        'DistributedSystem	' : tcf.t1,
-        'ResponseTime/PerformanceObjectives' : tcf.t2,
-        'End-UserEfficiency': tcf.t3,
-        'InternalProcessingComplexity' : tcf.t4,
-        'CodeReusability' : tcf.t5,
-        'EasyToInstall' : tcf.t6,
-        'EasyToUser' : tcf.t7,
-        'PortabilityToOtherPlatforms' : tcf.t8,
-        'SystemMaintenance' : tcf.t9,
-        'Concurrent/parallelProcessing' : tcf.t10,
-        'SecurityFeatures' : tcf.t11,
-        'AccessForThirdParties' : tcf.t12,
-        'EndUserTraining' : tcf.t13,
-        'TCF' : tcf.tcf,
-      },
-    'ECF':{
-        'FamiliarityWithDevelopmentProcessUsed' : ecf.e1,
-        'ApplicationExperience' : ecf.e2,
-        'Object-orientedExperienceOfTeam' : ecf.e3,
-        'LeadAnalystCapability' : ecf.e4,
-        'MotivationOfTheTeam' : ecf.e5,
-        'StabilityOfRequirements' : ecf.e6,
-        'Part-timeStaff' : ecf.e7,
-        'DifficultProgrammingLanguage' : ecf.e8,
-        'ECF: ' : ecf.ecf,
-    }
-    });
-    }catch (e, stackTrace) {
-    _logger.severe('Failed to created Use Case Points:', e, stackTrace);
+        'UCP': ucp.ucp,
+        'UUCP': {
+          'Simple': uucp.simple,
+          'Average': uucp.average,
+          'Complex': uucp.complex,
+          'UUCP': uucp.uucp,
+        },
+        'UAW': {
+          'Simple': uaw.simple,
+          'Average': uaw.average,
+          'Complex': uaw.complex,
+          'UAW': uaw.uaw,
+        },
+        'TCF': {
+          'DistributedSystem	': tcf.t1,
+          'ResponseTime/PerformanceObjectives': tcf.t2,
+          'End-UserEfficiency': tcf.t3,
+          'InternalProcessingComplexity': tcf.t4,
+          'CodeReusability': tcf.t5,
+          'EasyToInstall': tcf.t6,
+          'EasyToUser': tcf.t7,
+          'PortabilityToOtherPlatforms': tcf.t8,
+          'SystemMaintenance': tcf.t9,
+          'Concurrent/parallelProcessing': tcf.t10,
+          'SecurityFeatures': tcf.t11,
+          'AccessForThirdParties': tcf.t12,
+          'EndUserTraining': tcf.t13,
+          'TCF': tcf.tcf,
+        },
+        'ECF': {
+          'FamiliarityWithDevelopmentProcessUsed': ecf.e1,
+          'ApplicationExperience': ecf.e2,
+          'Object-orientedExperienceOfTeam': ecf.e3,
+          'LeadAnalystCapability': ecf.e4,
+          'MotivationOfTheTeam': ecf.e5,
+          'StabilityOfRequirements': ecf.e6,
+          'Part-timeStaff': ecf.e7,
+          'DifficultProgrammingLanguage': ecf.e8,
+          'ECF: ': ecf.ecf,
+        }
+      });
+    } catch (e, stackTrace) {
+      _logger.severe('Failed to created Use Case Points:', e, stackTrace);
     }
   }
+
   //Function update Use Case Points
   Future<void> updateUseCasePoints({
     required String pid,
@@ -80,56 +81,57 @@ class UseCasePointsRepository {
     required UseCasePointsTCF tcf,
     required UseCasePointsUAW uaw,
     required UseCasePointsECF ecf,
-}) async{
-    try{
+  }) async {
+    try {
       await _useCasePointsCollection.doc(pid).set({
         'Name Project': ucp.nameProject,
         'Updated Date ': DateTime.now(),
-        'UCP' : ucp.ucp,
-        'UUCP':{
-          'Simple' :uucp.simple,
-          'Average' :uucp.average,
-          'Complex' : uucp.complex,
-          'UUCP' : uucp.uucp,
+        'UCP': ucp.ucp,
+        'UUCP': {
+          'Simple': uucp.simple,
+          'Average': uucp.average,
+          'Complex': uucp.complex,
+          'UUCP': uucp.uucp,
         },
-        'UAW':{
-          'Simple' :uaw.simple,
-          'Average' :uaw.average,
-          'Complex' : uaw.complex,
-          'UAW' : uaw.uaw,
+        'UAW': {
+          'Simple': uaw.simple,
+          'Average': uaw.average,
+          'Complex': uaw.complex,
+          'UAW': uaw.uaw,
         },
-        'TCF':{
-          'DistributedSystem	' : tcf.t1,
-          'ResponseTime/PerformanceObjectives' : tcf.t2,
+        'TCF': {
+          'DistributedSystem	': tcf.t1,
+          'ResponseTime/PerformanceObjectives': tcf.t2,
           'End-UserEfficiency': tcf.t3,
-          'InternalProcessingComplexity' : tcf.t4,
-          'CodeReusability' : tcf.t5,
-          'EasyToInstall' : tcf.t6,
-          'EasyToUser' : tcf.t7,
-          'PortabilityToOtherPlatforms' : tcf.t8,
-          'SystemMaintenance' : tcf.t9,
-          'Concurrent/parallelProcessing' : tcf.t10,
-          'SecurityFeatures' : tcf.t11,
-          'AccessForThirdParties' : tcf.t12,
-          'EndUserTraining' : tcf.t13,
-          'TCF' : tcf.tcf,
+          'InternalProcessingComplexity': tcf.t4,
+          'CodeReusability': tcf.t5,
+          'EasyToInstall': tcf.t6,
+          'EasyToUser': tcf.t7,
+          'PortabilityToOtherPlatforms': tcf.t8,
+          'SystemMaintenance': tcf.t9,
+          'Concurrent/parallelProcessing': tcf.t10,
+          'SecurityFeatures': tcf.t11,
+          'AccessForThirdParties': tcf.t12,
+          'EndUserTraining': tcf.t13,
+          'TCF': tcf.tcf,
         },
-        'ECF':{
-          'FamiliarityWithDevelopmentProcessUsed' : ecf.e1,
-          'ApplicationExperience' : ecf.e2,
-          'Object-orientedExperienceOfTeam' : ecf.e3,
-          'LeadAnalystCapability' : ecf.e4,
-          'MotivationOfTheTeam' : ecf.e5,
-          'StabilityOfRequirements' : ecf.e6,
-          'Part-timeStaff' : ecf.e7,
-          'DifficultProgrammingLanguage' : ecf.e8,
-          'ECF: ' : ecf.ecf,
+        'ECF': {
+          'FamiliarityWithDevelopmentProcessUsed': ecf.e1,
+          'ApplicationExperience': ecf.e2,
+          'Object-orientedExperienceOfTeam': ecf.e3,
+          'LeadAnalystCapability': ecf.e4,
+          'MotivationOfTheTeam': ecf.e5,
+          'StabilityOfRequirements': ecf.e6,
+          'Part-timeStaff': ecf.e7,
+          'DifficultProgrammingLanguage': ecf.e8,
+          'ECF: ': ecf.ecf,
         }
       });
-    }catch (e, stackTrace) {
+    } catch (e, stackTrace) {
       _logger.severe('Failed to update Use Case Points:', e, stackTrace);
     }
   }
+
 // Function to get a specific use case point document by ID
   Future<DocumentSnapshot<Object?>> getUseCasePoints(String id) async {
     try {
