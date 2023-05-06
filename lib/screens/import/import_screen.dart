@@ -2,24 +2,23 @@
 
 
 
-
 import 'package:auto_route/auto_route.dart';
 
 import 'package:flutter/material.dart';
 
 @RoutePage()
-class ProfileScreen extends StatefulWidget{
-  const ProfileScreen({Key ? key}) : super(key: key);
+class ImportScreen extends StatefulWidget{
+  const ImportScreen({Key ? key}) : super(key: key);
   @override
-  _ProfileScreenState createState() => _ProfileScreenState();
+  _ImportScreenState createState() => _ImportScreenState();
 }
-class _ProfileScreenState extends State<ProfileScreen>{
+class _ImportScreenState extends State<ImportScreen>{
 
   @override
   Widget build(BuildContext context){
     return const Scaffold(
       backgroundColor: Color(0xFFEEEEEE),
-      body: Text('Profile'),
+      body: Text('History'),
     );
   }
 }

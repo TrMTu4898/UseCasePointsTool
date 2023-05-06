@@ -5,8 +5,12 @@ import 'package:usecasetool/router/auto_router.gr.dart';
 import '../../data/models/use_case_points.dart';
 
 @RoutePage()
-class UseCasePointScreen extends StatelessWidget {
-  const UseCasePointScreen({Key? key}) : super(key : key);
+class UseCasePointScreen extends StatefulWidget{
+  const UseCasePointScreen ({Key?key}) : super(key:key);
+  @override
+  _UseCasePointScreenState createState() => _UseCasePointScreenState();
+}
+class _UseCasePointScreenState extends State<UseCasePointScreen> {
 
   @override
   Widget build(BuildContext context){

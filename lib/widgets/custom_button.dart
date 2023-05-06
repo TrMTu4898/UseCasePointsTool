@@ -158,7 +158,8 @@ class StartButton extends StatelessWidget {
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color(0xFF50C2C9),
-        padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 25),
+        padding: const EdgeInsets.only(bottom: 0),
+        minimumSize: Size(MediaQuery.of(context).size.width,48),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
         ),

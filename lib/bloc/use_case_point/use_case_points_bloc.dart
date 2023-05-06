@@ -101,4 +101,8 @@ class UseCasePointsFormBloc extends FormBloc<String, String>{
     emitSuccess(canSubmitAgain: true);
   }
 
+  void onSuccess() async {
+
+  }
+
 }

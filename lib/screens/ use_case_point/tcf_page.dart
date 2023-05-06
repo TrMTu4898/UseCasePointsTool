@@ -4,12 +4,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
-class RegisterPage extends StatefulWidget{
-  const RegisterPage({Key ? key}) : super(key: key);
+class TCFPage extends StatefulWidget{
+  const TCFPage({Key ? key}) : super(key: key);
   @override
-  _RegisterPageState createState() => _RegisterPageState();
+  _TCFPageState createState() => _TCFPageState();
 }
-class _RegisterPageState extends State<RegisterPage>{
+class _TCFPageState extends State<TCFPage>{
 
   @override
   Widget build(BuildContext context){

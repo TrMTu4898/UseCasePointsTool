@@ -10,6 +10,8 @@ class GetStartedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double bottomPadding = MediaQuery.of(context).viewInsets.bottom + 20.0;
+    final double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color(0xFFEEEEEE),
       body: Stack(
@@ -42,29 +44,30 @@ class GetStartedScreen extends StatelessWidget {
               top: 320,
               left: 0,
               right: 0,
+              height: screenHeight * 0.3,
               child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                child: ListView(
+                  shrinkWrap: true,
+                  physics: const ClampingScrollPhysics(),
                   children: const [
                     Text(
                       'This application calculates the number of Use Case Points (UCP) for a project.'
-                      ' Please note that Use Cases need to be created in order to use this tool.'
-                      ' Use Case Points are used to estimate the effort of a software project. '
-                      'This application does not calculate the effort, but provides a calculation for Use Case Points as a metric for the software project size during the estimation process.'
-                      ' The UCP formula uses four elements: Unadjusted Use Case Weight (UUCW),'
-                      ' Unadjusted Actor Weight (UAW), Technical Complexity Factor (TCF),'
-                      ' and Environmental Complexity Factor (ECF). '
-                      'Each element will be presented on a specific page to calculate the UCP step by step. '
-                      'The Use Case Points page will contain the final calculation based on the four previous elements.'
-                      ' For boundary limits, information on functionality, or general questions about Use Case Points,'
-                      ' please refer to the Help section located in the top right corner of every page.For calculation pages,'
-                      ' the Calculate button MUST be pressed to move to the next page.',
+                          ' Please note that Use Cases need to be created in order to use this tool.'
+                          ' Use Case Points are used to estimate the effort of a software project. '
+                          'This application does not calculate the effort, but provides a calculation for Use Case Points as a metric for the software project size during the estimation process.'
+                          ' The UCP formula uses four elements: Unadjusted Use Case Weight (UUCW),'
+                          ' Unadjusted Actor Weight (UAW), Technical Complexity Factor (TCF),'
+                          ' and Environmental Complexity Factor (ECF). '
+                          'Each element will be presented on a specific page to calculate the UCP step by step. '
+                          'The Use Case Points page will contain the final calculation based on the four previous elements.'
+                          ' For boundary limits, information on functionality, or general questions about Use Case Points,'
+                          ' please refer to the Help section located in the top right corner of every page.For calculation pages,'
+                          ' the Calculate button MUST be pressed to move to the next page.',
                       style: TextStyle(fontSize: 16),
                       textAlign: TextAlign.center,
                     ),
                   ],
-                ),
+                )
               )),
           const Positioned(
             top: 50,
@@ -73,9 +76,7 @@ class GetStartedScreen extends StatelessWidget {
             child: Center(child: WidgetsGetStarted()),
           ),
           const Positioned(
-            top: 750,
-            left: 0,
-            right: 0,
+            bottom: 50,
             child: Center(
               child: StartButton(),
             ),

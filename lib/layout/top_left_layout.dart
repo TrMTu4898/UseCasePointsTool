@@ -8,8 +8,8 @@ class TopLeftLayOut extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          width: 300,
-          height: 300,
+          width: 188,
+          height: 188,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(0),
           ),
