@@ -11,7 +11,8 @@ import 'package:usecasetool/screens/home/home_screen.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:usecasetool/router/auto_router.dart' as router;
 import 'package:provider/provider.dart';
-
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter/cupertino.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -27,8 +28,24 @@ void main() async {
       child: const MyApp(),
     ),
   );
+  configLoading();
 }
-
+void configLoading() {
+  EasyLoading.instance
+    ..displayDuration = const Duration(milliseconds: 2000)
+    ..indicatorType = EasyLoadingIndicatorType.fadingCircle
+    ..loadingStyle = EasyLoadingStyle.dark
+    ..indicatorSize = 45.0
+    ..radius = 10.0
+    ..progressColor = Colors.yellow
+    ..backgroundColor = Colors.green
+    ..indicatorColor = Colors.yellow
+    ..textColor = Colors.yellow
+    ..maskColor = Colors.blue.withOpacity(0.5)
+    ..userInteractions = true
+    ..dismissOnTap = false;
+    // ..customAnimation = CustomAnimation();
+}
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
   @override
@@ -42,6 +59,8 @@ class MyApp extends StatefulWidget {
     return MaterialApp.router(
       title: 'Use Case Points Calculator',
       routerConfig: _appRouter.config(),
+       builder: EasyLoading.init(),
+    
     );
   }
   }

@@ -44,4 +44,13 @@ class AuthenticationBloc
     yield AuthenticationFailure();
     _userRepository.signOut();
   }
+
+  Stream<AuthenticationState> __mapAuthenticationSignInToState({
+    required String email, 
+    required String password,
+  }) async*{
+     final currentUser = await _userRepository.signIn(email: email,password: password);
+    //  final initUser = currentUser?.user;
+     print(currentUser);
+  }
 }
