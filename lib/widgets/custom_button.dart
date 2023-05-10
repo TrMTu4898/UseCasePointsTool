@@ -2,16 +2,17 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:usecasetool/router/auto_router.gr.dart';
 
-class UseCaseCalculateButton extends StatelessWidget {
-  const UseCaseCalculateButton({Key? key, required Null Function() onPressed})
-      : super(key: key);
+class UseCasePointButton extends StatelessWidget {
+  final void Function() onPressed;
+  const UseCasePointButton({
+    super.key,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        context.pushRoute(const UseCasePointRoute());
-      },
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         foregroundColor: Colors.black,
         backgroundColor: Colors.white,
@@ -75,15 +76,17 @@ class UseCaseCalculateButton extends StatelessWidget {
 }
 
 class ImportButton extends StatelessWidget {
-  const ImportButton({Key? key, required Null Function() onPressed})
-      : super(key: key);
+  final void Function() onPressed;
+  const ImportButton({
+    super.key,
+    required this.onPressed,
+  });
+
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        Navigator.pushNamed(context, '/uucp-calculate');
-      },
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         foregroundColor: Colors.black,
         backgroundColor: Colors.white,
@@ -153,8 +156,8 @@ class StartButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        context.pushRoute(const HomeRoute());
-
+        print(context);
+        context.router.navigateNamed('/home');
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color(0xFF50C2C9),
@@ -176,13 +179,40 @@ class StartButton extends StatelessWidget {
 }
 
 class UUCPCalculateButton extends StatelessWidget {
-  final VoidCallback onPressed;
-
+  final void Function() onPressed;
   const UUCPCalculateButton({
-    Key? key,
+    super.key,
     required this.onPressed,
-  }) : super(key: key);
+  });
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: const Color(0xFF50C2C9),
+        minimumSize: const Size(300, 48),
+        padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 25),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+      ),
+      child: const Text(
+        'Calculate',
+        style: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+}
 
+class UAWCalculateButton extends StatelessWidget {
+  final void Function() onPressed;
+  const UAWCalculateButton({
+    super.key,
+    required this.onPressed,
+  });
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(

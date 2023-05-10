@@ -17,7 +17,10 @@ class _UseCasePointScreenState extends State<UseCasePointScreen> {
     return AutoTabsRouter.pageView(
         routes: const [
           UUCPRoute(),
-          UAWRoute()
+          UAWRoute(),
+          TCFRoute(),
+          ECFRoute(),
+          UCPRoute()
         ],
         builder: (context, child, _){
           final tabsRouter = AutoTabsRouter.of(context);
@@ -38,6 +41,19 @@ class _UseCasePointScreenState extends State<UseCasePointScreen> {
                 BottomNavigationBarItem(
                     icon: Icon(Icons.calculate),
                     label: 'UAW Screen'
+                ),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.calculate),
+                    label: 'TCF Screen'
+                ),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.calculate),
+                    label: 'ECF Screen'
+                ),
+
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.calculate),
+                    label: 'UCP Screen'
                 ),
               ],
             ),

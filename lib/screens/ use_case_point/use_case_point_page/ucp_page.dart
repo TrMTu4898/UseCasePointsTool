@@ -4,12 +4,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
-class TCFPage extends StatefulWidget{
-  const TCFPage({Key ? key}) : super(key: key);
+class UCPPage extends StatefulWidget{
+  const UCPPage({Key ? key}) : super(key: key);
   @override
-  _TCFPageState createState() => _TCFPageState();
+  _UCPPageState createState() => _UCPPageState();
 }
-class _TCFPageState extends State<TCFPage>{
+class _UCPPageState extends State<UCPPage>{
 
   @override
   Widget build(BuildContext context){
