@@ -10,35 +10,36 @@ class UseCasePointScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context){
-    return AutoTabsRouter.pageView(
-        routes: const [
-          UUCPRoute(),
-          UAWRoute()
-        ],
-        builder: (context, child, _){
-          final tabsRouter = AutoTabsRouter.of(context);
-          return Scaffold(
-            appBar: AppBar(
-                title: const Text('Use Case Points'),
-                leading: const AutoLeadingButton()
-            ),
-            body: child,
-            bottomNavigationBar: BottomNavigationBar(
-              currentIndex: tabsRouter.activeIndex,
-              onTap: tabsRouter.setActiveIndex,
-              items:const [
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.calculate),
-                    label: 'UUCP Screen'
-                ),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.calculate),
-                    label: 'UAW Screen'
-                ),
-              ],
-            ),
-          );
-        }
-    );
+    // return AutoTabsRouter.pageView(
+    //     routes: const [
+    //       UUCPRoute(),
+    //       UAWRoute()
+    //     ],
+    //     builder: (context, child, _){
+    //       final tabsRouter = AutoTabsRouter.of(context);
+    //       return Scaffold(
+    //         appBar: AppBar(
+    //             title: const Text('Use Case Points'),
+    //             leading: const AutoLeadingButton()
+    //         ),
+    //         body: child,
+    //         bottomNavigationBar: BottomNavigationBar(
+    //           currentIndex: tabsRouter.activeIndex,
+    //           onTap: tabsRouter.setActiveIndex,
+    //           items:const [
+    //             BottomNavigationBarItem(
+    //                 icon: Icon(Icons.calculate),
+    //                 label: 'UUCP Screen'
+    //             ),
+    //             BottomNavigationBarItem(
+    //                 icon: Icon(Icons.calculate),
+    //                 label: 'UAW Screen'
+    //             ),
+    //           ],
+    //         ),
+    //       );
+    //     }
+    // );
+    return Center(child: Text('hi'),);
   }
 }

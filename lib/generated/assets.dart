@@ -6,7 +6,7 @@ class Assets {
       'assets/images/App_bar_without_menu.png';
   static const String imagesButtonImport1 = 'assets/images/button_import_1.png';
   static const String imagesButtonImport2 = 'assets/images/button_import_2.png';
-  static const String imagesButtonImport3 = 'assets/images/button_import_3.png';
+
   static const String imagesButtonUseCaseCalculate1 =
       'assets/images/button_use_case_calculate_1.png';
   static const String imagesButtonUseCaseCalculate2 =
