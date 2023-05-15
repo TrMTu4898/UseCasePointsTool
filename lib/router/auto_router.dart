@@ -11,19 +11,21 @@ class AppRouter extends $AppRouter {
     //   AutoRoute(page: ProfileRoute.page),
     //   AutoRoute(page: HomeRoute.page),
     // ]),
-    AutoRoute(
-      path: '/',
-      page: HomeViewRoute.page,
-      children: [
-        RedirectRoute(path: '', redirectTo: 'Home'),
-        AutoRoute(path: 'Home', page: HomeRoute.page),
-        AutoRoute(path: 'History',page: HistoryRoute.page),
-        AutoRoute(path: 'Profile', page: ProfileRoute.page),
-        AutoRoute(path: 'Tool',page: UseCasePointRoute.page)
-      ]
+    // AutoRoute(
+    //   path: '/',
+    //   page: HomeViewRoute.page,
+    //   children: [
+    //     RedirectRoute(path: '', redirectTo: 'Home'),
+    //     AutoRoute(path: 'Home', page: HomeRoute.page),
+    //     AutoRoute(path: 'History',page: HistoryRoute.page),
+    //     AutoRoute(path: 'Profile', page: ProfileRoute.page),
+    //     AutoRoute(path: 'Tool',page: UseCasePointRoute.page)
+    //   ]
 
-    ),
-    AutoRoute( path: '/Login', page: LoginRoute.page),
+    // ),
+    AutoRoute( path: '/', page: LoginRoute.page),
+     AutoRoute( path: '/Register', page: Register.page),
+    AutoRoute( path: '/forgotpassword', page: ForgotPassword.page),
     // AutoRoute(path: '/Login', page: LoginRoute.page),
     // AutoRoute(
     //   page: UseCasePointRoute.page,

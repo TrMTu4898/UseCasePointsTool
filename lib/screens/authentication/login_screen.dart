@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:usecasetool/router/auto_router.gr.dart';
+import 'package:usecasetool/screens/authentication/forgot_password_screen.dart';
 import '../../utilize/auth_validator.dart';
+import '../../widget/TextFied/TextFied_defause.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 @RoutePage()
@@ -22,7 +25,6 @@ class _LoginScreenState extends State<LoginScreen> {
   String? _passWord;
   bool _obscureText = true;
 
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   Future<void> login(BuildContext context) async {
     EasyLoading.show(status: 'Is Login');
@@ -30,6 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     String? email = _userNameController?.text;
     String? passWord = _passWordController?.text;
+    // ignore: non_constant_identifier_names
     String? ValidateEmail = Validator.validateEmail(email: email);
     String? ValidatePassWord = Validator.validatePassword(password: passWord);
 
@@ -70,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
         shape: ContinuousRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(20),
-            bottomRight: Radius.circular(20),
+            bottomRight: const Radius.circular(20),
           ),
         ),
       ),
@@ -78,7 +81,9 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: const Color(0xFFF5F5F5),
       body: SafeArea(
         minimum: const EdgeInsets.only(left: 17, right: 17),
-        child: Column(children: <Widget>[
+        child: ListView(
+          physics: NeverScrollableScrollPhysics(),
+          children: <Widget>[
           // Padding(
           //   padding: EdgeInsets.only(top: 40, bottom: 30),
           //   child: Container(
@@ -92,12 +97,28 @@ class _LoginScreenState extends State<LoginScreen> {
           Padding(
             padding: EdgeInsets.only(top: 0, bottom: 10),
             child: Container(
-              child: Image(
-                image: AssetImage('assets/images/image8.png'),
+              child: Image.asset(
+                'assets/images/SignInfinal1.png',
+                 width: 246,
+                  height: 243,
               ),
             ),
           ),
           // --------------------------UserName----------------------
+          // Padding(
+          //   padding: EdgeInsets.only(top: 0, bottom: 10),
+          //   child: Container(
+          //     // decoration: BoxDecoration(
+          //     //     borderRadius: BorderRadius.circular(5),
+          //     //     border: Border.all(color: Colors.red)),
+
+          //     child: TextFiedDefause(
+          //       controller:_userNameController,
+
+          //     ),
+          //   ),
+          // ),
+          // // --------------------------UserName----------------------
           Padding(
             padding: EdgeInsets.only(top: 0, bottom: 10),
             child: Container(
@@ -137,7 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           // --------------------------PassWord----------------------
           Padding(
-            padding: EdgeInsets.only(top: 0, bottom: 10),
+            padding: const EdgeInsets.only(top: 0, bottom: 10),
             child: Container(
               child: TextFormField(
                 // validator: (value) =>_validator ,
@@ -154,7 +175,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   hintText: 'Pass Word',
                   prefixIcon: Icon(
                     Icons.key,
-                    color: Color(0xff50C2C9),
+                    color: const Color(0xff50C2C9),
                   ),
                   suffixIcon: GestureDetector(
                     onTap: () {
@@ -164,21 +185,21 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     child: Icon(
                       _obscureText ? Icons.visibility : Icons.visibility_off,
-                      color: Color(0xff50C2C9),
+                      color: const Color(0xff50C2C9),
                     ),
                   ),
-                  fillColor: Color.fromARGB(255, 250, 252, 255),
+                  fillColor: const Color.fromARGB(255, 250, 252, 255),
                   border: OutlineInputBorder(
                       borderSide: BorderSide.none,
                       borderRadius: BorderRadius.circular(50)),
-                  focusedBorder: OutlineInputBorder(
+                  focusedBorder: const OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0xff50C2C9),
                       width: 2,
                     ),
                   ),
                   contentPadding:
-                      EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+                      const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
                 ),
               ),
             ),
@@ -187,20 +208,20 @@ class _LoginScreenState extends State<LoginScreen> {
           ElevatedButton(
               style: ButtonStyle(
                 padding: MaterialStateProperty.all<EdgeInsets>(
-                    EdgeInsets.symmetric(horizontal: 18)),
+                    const EdgeInsets.symmetric(horizontal: 18)),
                 backgroundColor:
-                    MaterialStateProperty.all<Color>(Color(0xff50C2C9)),
+                    MaterialStateProperty.all<Color>(const Color(0xff50C2C9)),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(24),
                   ),
                 ),
-                minimumSize: MaterialStateProperty.all<Size>(Size(328, 48)),
+                minimumSize: MaterialStateProperty.all<Size>(const Size(328, 48)),
               ),
               onPressed: () {
                 login(context);
               },
-              child: Text(
+              child: const Text(
                 'Đăng nhập',
                 style: TextStyle(
                   fontSize: 18,
@@ -208,7 +229,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               )),
           // --------------------------Forgot passWord----------------------
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
 
@@ -216,15 +237,15 @@ class _LoginScreenState extends State<LoginScreen> {
           ElevatedButton(
               style: ButtonStyle(
                 padding: MaterialStateProperty.all<EdgeInsets>(
-                    EdgeInsets.symmetric(horizontal: 16)),
+                    const EdgeInsets.symmetric(horizontal: 16)),
                 backgroundColor: MaterialStateProperty.all<Color>(
-                    Color.fromARGB(255, 255, 255, 255)),
+                    const Color.fromARGB(255, 255, 255, 255)),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
-                minimumSize: MaterialStateProperty.all<Size>(Size(328, 48)),
+                minimumSize: MaterialStateProperty.all<Size>(const Size(328, 48)),
               ),
               onPressed: () {
                 print(_userName);
@@ -295,8 +316,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 minimumSize: MaterialStateProperty.all<Size>(Size(328, 48)),
               ),
               onPressed: () {
-                print(_userName);
-                print(_passWord);
+                router.push(Register());
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -331,7 +351,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 minimumSize: MaterialStateProperty.all<Size>(Size(328, 48)),
               ),
-              onPressed: () {},
+              onPressed: () {
+                router.push(ForgotPassword());
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

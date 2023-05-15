@@ -57,6 +57,7 @@ class MyApp extends StatefulWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false, // Thêm hoặc sửa giá trị này thành false
       title: 'Use Case Points Calculator',
       routerConfig: _appRouter.config(),
        builder: EasyLoading.init(),
